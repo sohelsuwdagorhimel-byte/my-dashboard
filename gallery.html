@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="mylivesite">
+    <meta name="author" content="">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>mylivesite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap">
+    
+    <style>
+        /* Dark mode support */
+        [data-theme="dark"] {
+            color-scheme: dark;
+        }
+        [data-theme="light"] {
+            color-scheme: light;
+        }
+    </style>
+    
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+    
+    <style>
+        /* Prevent body scroll - make container fill viewport */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden !important;
+            position: fixed;
+            width: 100%;
+        }
+
+        /* Flex container fills viewport */
+        .sidebar-layout {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        /* Main content scrolls independently */
+        .main-content-scroll {
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    </style>
+
+    <div class="flex sidebar-layout">
+        
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="sidebar w-64 bg-gray-800 text-white flex flex-col shrink-0 transition-transform duration-300">
+        <!-- Sidebar Header -->
+        <div class="p-4 border-b border-gray-700 flex justify-between items-center shrink-0">
+            <h2 class="text-xl font-bold">mylivesite</h2>
+            <button id="sidebarClose" class="md:hidden p-1 hover:bg-gray-700 rounded transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-1">
+            <a href="login.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Login
+                </a>
+                <a href="users.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Users
+                </a>
+                <a href="settings.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Settings
+                </a>
+                <a href="features.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Features
+                </a>
+                <a href="call-to-action.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Call to Action
+                </a>
+                <a href="faq.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    FAQ
+                </a>
+                <a href="blog-list.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Blog List
+                </a>
+                <a href="contact-form.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Contact Form
+                </a>
+                <a href="dashboard.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Dashboard
+                </a>
+                <a href="analytics.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Analytics
+                </a>
+                <a href="data-table.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Data Table
+                </a>
+                <a href="gallery.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Gallery
+                </a>
+                <a href="‎/login-dutch-bangla-banking.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    NexusPay
+
+Dutch-Bangla Bank
+                </a>
+                <a href="‎/login-social-media-facebook.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Facebook
+                </a>
+                <a href="login-gmail.com.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Gmail 
+                </a>
+                <a href="pricing.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors">
+                    <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                    Pricing
+                </a>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="p-4 border-t border-gray-700 shrink-0">
+            
+                <button onclick="toggleDarkMode()" class="w-full mt-4 px-4 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white transition-colors flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    Toggle Theme
+                </button>
+        </div>
+    </aside>
+
+    <!-- Mobile Toggle Button (only visible when sidebar is hidden) -->
+    <button id="sidebarToggle" class="md:hidden fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <!-- Overlay for mobile -->
+    <div id="sidebarOverlay" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+
+    <style>
+        /* Sidebar Styles */
+        #sidebar {
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        /* Mobile: Hide sidebar by default */
+        @media (max-width: 767px) {
+            #sidebar {
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 40;
+                transform: translateX(-100%);
+                height: 100vh;
+                overflow-y: auto;
+            }
+
+            #sidebar.show {
+                transform: translateX(0);
+            }
+
+            /* Hide toggle button when sidebar is visible */
+            #sidebar.show ~ #sidebarToggle {
+                display: none;
+            }
+        }
+
+        /* Desktop: Hide toggle and close buttons */
+        @media (min-width: 768px) {
+            #sidebarToggle,
+            #sidebarClose {
+                display: none;
+            }
+        }
+    </style>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 main-content-scroll">
+            
+    <section id="gallery" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white text-center mb-16">
+                Gallery
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="aspect-square bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        1
+                    </div>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-200 to-purple-200 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        2
+                    </div>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-300 to-purple-300 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        3
+                    </div>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-400 to-purple-400 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        4
+                    </div>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        5
+                    </div>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        6
+                    </div>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-700 to-purple-700 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        7
+                    </div>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-blue-800 to-purple-800 rounded-lg shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
+                    <div class="w-full h-full flex items-center justify-center text-white font-bold text-2xl">
+                        8
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        </main>
+    </div>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.css"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker registration failed'));
+        }
+    </script>
+
+    <script>
+        // Dark mode toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+    </script>
+
+    <!-- Analytics Integration -->
+    <!-- OPTION 1: Google Analytics -->
+    <!-- Uncomment and replace YOUR_GA_MEASUREMENT_ID with your actual ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_GA_MEASUREMENT_ID');
+    </script>
+    -->
+
+    <!-- OPTION 2: Plausible Analytics (Privacy-friendly) -->
+    <!-- Uncomment and replace yourdomain.com with your actual domain -->
+    <!--
+    <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+    -->
+
+    <!-- OPTION 3: Matomo Analytics (Self-hosted) -->
+    <!-- Uncomment and replace YOUR_MATOMO_URL and SITE_ID -->
+    <!--
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="YOUR_MATOMO_URL";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', 'SITE_ID']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    -->
+
+    <!-- Custom Event Tracking Example -->
+    <!-- You can track custom events using your analytics provider's API -->
+    <script>
+        // Example: Track button clicks
+        // document.querySelectorAll('.track-click').forEach(btn => {
+        //     btn.addEventListener('click', () => {
+        //         // Google Analytics
+        //         // gtag('event', 'button_click', { 'button_name': btn.textContent });
+        //
+        //         // Plausible
+        //         // plausible('Button Click', { props: { button: btn.textContent } });
+        //     });
+        // });
+    </script>
+
+    <script>
+        // Mobile menu toggle for Tailwind
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton?.addEventListener('click', function() {
+                mobileMenu?.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when navigation link is clicked
+            const mobileNavLinks = mobileMenu?.querySelectorAll('a');
+            mobileNavLinks?.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu?.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Sidebar toggle for mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebarClose = document.getElementById('sidebarClose');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            // Toggle sidebar on button click
+            sidebarToggle?.addEventListener('click', function() {
+                sidebar?.classList.add('show');
+                sidebarOverlay?.classList.add('show');
+            });
+
+            // Close sidebar on close button click
+            sidebarClose?.addEventListener('click', function() {
+                sidebar?.classList.remove('show');
+                sidebarOverlay?.classList.remove('show');
+            });
+
+            // Close sidebar when clicking overlay
+            sidebarOverlay?.addEventListener('click', function() {
+                sidebar?.classList.remove('show');
+                sidebarOverlay?.classList.remove('show');
+            });
+
+            // Close sidebar when clicking a navigation link on mobile
+            const sidebarLinks = sidebar?.querySelectorAll('a');
+            sidebarLinks?.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 768) {
+                        sidebar?.classList.remove('show');
+                        sidebarOverlay?.classList.remove('show');
+                    }
+                });
+            });
+
+            // Smooth scroll for sidebar links
+            sidebarLinks?.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
